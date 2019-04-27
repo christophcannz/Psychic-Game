@@ -1,4 +1,4 @@
-var letterArray = ["a", "b","c","d","e","f","g","h","i","j","k","l","m","n","b","b","b","b","b","b","b","b","b","x", "y", "z",]
+var letterArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",]
 var guessedLetters;
 var guesses = 7;
 var correctCount = 0;
@@ -9,8 +9,9 @@ function startGame() {
     guessedLetters=[]
     assignLetter();
     document.onkeyup=function(event){
-        verifyInput(event.key.toLowerCase);
-        console.log("button Pressed");
+        verifyInput(event.key.toLowerCase());
+        console.log(event.key.toLowerCase());
+
     }
 }
 
@@ -20,8 +21,15 @@ function assignLetter() { //the value of letter array at the index
 }
 
 function verifyInput(input){
-    if (input==="a") {checkInput(input);}
-    else if (input==="b") {checkInput(input);}
+    if (input===chosenLetter) {
+        // checkInput(input);
+        console.log('correct guess');
+    } else {
+        // checkInput(input);
+        console.log('incorrect guess');
+    }
+
+    console.log(input);
 }
 
 function checkInput(input){
@@ -40,6 +48,7 @@ function checkInput(input){
         //bad guess conditions
         //add one to losses
         incorrectCount++;
+        document.getElementById("incorrect")
         //a guess would be used
         guesses--;
         //should remain on current letter until guess correctly
@@ -47,7 +56,24 @@ function checkInput(input){
         //guesses would be used up.
     }
     checkLossConditions();
+    
 }
+        
+    var correct = document.getElementById("correct")
+    var incorrect = document.getElementById("incorrect")
+    var guessesleft = document.getElementById("guessesleft")
+    var guessesmade = document.getElementById("guessesmade")
+
+    correct.textContent= '0'
+    incorrect.textContent= '0'
+    guessesleft.textContent='0'
+    guessesmade.textContent='0'
+
+
+startGame();
+console.log(chosenLetter);
+
+
 
 /*event.key.toLowerCase()
 
@@ -56,5 +82,5 @@ if input!=chosenLetter {
 	guessedLetters = guessedLetters+input+" ";
 }
 */
-startGame();
-console.log(chosenLetter);
+
+

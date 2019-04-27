@@ -8,20 +8,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <title>Psychic Game</title>
-    <script src="./assets/javascript/game.js"></script>
 </head>
 <body>
     <div class="header"><h1>READ MY MIND</h1></div>
         <div class="container" style="width: 100%;">
             <h2>~Guess What Letter I'm Thinking Of~</h2>
             <div>
-                <script var targetDiv = document.getElementById("empty-div")></script>
-            <ol>
-            <li>CORRECT:</li>
-            <li>INCORRECT:</li>
-            <li>GUESSES LEFT:</li>
-            <li>GUESSES MADE:</li>
-            </ol>
+            <p>CORRECT: <span id="correct"></span></p>
+            <p>INCORRECT: <span id="incorrect"></span></p>
+            <p>GUESSES LEFT: <span id="guessesleft"></span></p>
+            <p>GUESSES MADE: <span id="guessesmade"></span></p>
             </div>
         </div>
   
@@ -29,12 +25,16 @@
     <footer>
 
     </footer> 
+    <script src="./assets/javascript/game.js"></script>
 
 </body>
 </html>
 
 <!--<script>
-        var choreList = document.getElementById("chores-list")
+        var correct = document.getElementById("correct")
+        var incorrect = document.getElementbyId("incorrect")
+        var guesses-left = document.getelementbyId("guesses-left")
+        var guesses-made = document.getelementbyId("guesses-made")
         console.log(choreList.textContent);
 
         choreList.textContent = "My Chore List"
